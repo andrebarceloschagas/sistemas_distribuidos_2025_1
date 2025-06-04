@@ -1,0 +1,40 @@
+Inicio
+  somatorio=soma=0;
+  
+  Se(id==0) então
+    Leia(numero);
+    Para i=1 até N-1 Faça
+      Envie numero para elemento i;
+    FimPara
+  Senão
+    Receba numero de elemento 0;
+  FimSe
+
+  parcela=(int)numero/N;
+  inicio=(parcela*id)+1;
+  fim=parcela*(id+1);
+
+  Se(id==N-1) então
+    fim=numero;
+  FimSe
+
+  somatorio=calsomatorio(inicio,fim);
+
+  metade=N;
+
+  Enquanto id < metade E metade > 1:
+  #Repita
+    metade=metade/2;
+    soma=somatorio;
+    Se(id >= metade) então
+      Envie soma para elemento (id-metade);
+    Senão
+      Receba soma de elemento (id+metade);
+      somatorio=somatorio+soma;
+    FimSe
+  #Enquanto id < metade E metade > 1;
+  
+  Se(id==0) então
+    Escreva(somatorio);
+  FimSe
+Fim  
