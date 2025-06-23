@@ -10,7 +10,7 @@
 
 ## Visão Geral
 
-Este repositório reúne exemplos práticos e exercícios do curso de Sistemas Distribuídos, implementados em Java e Python. Os códigos demonstram conceitos fundamentais como comunicação TCP/UDP, programação concorrente, serialização de objetos e computação paralela utilizando MPI.
+Este repositório reúne exemplos práticos e exercícios da disciplina de Sistemas Distribuídos, implementados em Java e Python. Os códigos demonstram conceitos fundamentais como comunicação TCP/UDP, programação concorrente, serialização de objetos e computação paralela utilizando MPI.
 
 ## Estrutura do Projeto
 
@@ -51,8 +51,19 @@ sistemas_distribuidos_2025_1/
 │   ├── teste04.py
 │   └── teste07.py
 │
-└── 2025_05_27/          # Projetos Avançados
-    └── soma_paralela_mpi.py
+├── 2025_05_27/          # Projetos Avançados MPI
+│   ├── soma_paralela_mpi.py
+│   └── teste05.py
+│
+├── 2025_06_03/          # Algoritmo Butterfly (Redução Binária)
+│   ├── teste04.py
+│   ├── somatorio_butterfly.py
+│   ├── pseudo_codigo.txt
+│   └── Algoritmo_do_Somatorio_seguindo_o_Criterio_Butterfly.pdf
+│
+└── 2025_06_10/          # Balanceamento de Carga
+    ├── balanceamento_cargas.py
+    └── Balanceamento_de_Carga.pdf
 ```
 
 ## Tecnologias Utilizadas
@@ -157,12 +168,39 @@ mpirun -np 4 python3 soma_paralela_mpi.py
 mpirun -np 8 python3 soma_paralela_mpi.py
 ```
 
+### Algoritmo Butterfly - Redução Binária (Python MPI)
+
+#### Algoritmo Butterfly (Redução Otimizada)
+```bash
+cd 2025_06_03/
+mpiexec -n 4 python3 somatorio_butterfly.py
+mpiexec -n 8 python3 somatorio_butterfly.py
+```
+
+#### Somatório com Master-Slave
+```bash
+cd 2025_06_03/
+mpiexec -n 4 python3 teste04.py
+```
+
+### Balanceamento de Carga (Python MPI)
+
+#### Balanceamento Dinâmico de Carga
+```bash
+cd 2025_06_10/
+mpiexec -n 4 python3 balanceamento_cargas.py
+mpiexec -n 6 python3 balanceamento_cargas.py
+```
+
 ## Conceitos Demonstrados
 
 - Comunicação de rede (TCP, UDP, sockets, timeouts)
 - Programação concorrente (threads, sincronização, thread safety)
 - Serialização de objetos (ObjectInputStream/ObjectOutputStream, Serializable)
 - Computação paralela (MPI, paralelização, comunicação entre processos)
+- Algoritmos de redução distribuída (Butterfly, redução binária)
+- Balanceamento de carga dinâmico (pool de tarefas, distribuição adaptativa)
+- Otimização de performance em sistemas heterogêneos
 
 ## Padrões e Boas Práticas
 
@@ -218,8 +256,8 @@ Para contribuir com este projeto:
 
 ## Licença
 
-Este projeto é destinado exclusivamente para fins educacionais no contexto do curso de Sistemas Distribuídos 2025.1.
+Este projeto é destinado exclusivamente para fins educacionais no contexto da disciplina de Sistemas Distribuídos 2025/1 CCOMP/UFT.
 
 ---
 
-*Última atualização: 27 de maio de 2025*
+*Última atualização: 22 de junho de 2025*
